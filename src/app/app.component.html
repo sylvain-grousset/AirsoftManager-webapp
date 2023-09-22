@@ -1,12 +1,14 @@
 <div class="cardList">
 <div class="card" *ngFor="let uneSession of lesSessions">
-  Date session : {{ uneSession.sessionDate }}
+  Date session : {{ uneSession.session.sessionDate }}
   <br>
-  Heure de début : {{ uneSession.heureDebut }}
+  Heure de début : {{ uneSession.session.heureDebut }}
   <br>
-  Heure de fin : {{ uneSession.heureFin }}
+  Heure de fin : {{ uneSession.session.heureFin }}
   <br>
-  <button mat-button (click)="openDialog(uneSession.sessionId)">S'inscrire</button>
+  {{ uneSession.numberOfParticipants }} / {{ uneSession.session.maxParticipants }}
+  <br>
+  <button mat-button (click)="openDialog(uneSession.session.sessionId)">S'inscrire</button>
   <br><br>
 
 </div>
