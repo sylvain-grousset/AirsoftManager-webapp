@@ -1,4 +1,16 @@
-<h1 mat-dialog-title>Dialog with elements</h1>
+<h1 mat-dialog-title>Inscription session airsoft n°{{ selectedSessionID }}</h1>
 <mat-dialog-content>
-    <p>Contenu de la boîte de dialogue.</p>
-  </mat-dialog-content>
+    <form [formGroup]="participantForm" id="participantForm" (ngSubmit)="onSubmit($event)">
+      <input type="text" id="nom" 
+      formControlName="participantNom" placeholder="Nom" />
+      <br>
+      <input type="text" id="prenom"
+      formControlName="participantPrenom" placeholder="Prenom" />
+      <br>
+      <input type="text" id="email" 
+      formControlName="participantEmail" placeholder="Email" />
+      <br>
+      <button id="submit" type="submit">Valider</button>
+      <button mat-dialog-close>Close</button>
+    </form>
+</mat-dialog-content>
