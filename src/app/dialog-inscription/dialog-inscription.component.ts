@@ -12,6 +12,7 @@ import { ApiService } from '../service/api-service.service';
 })
 export class DialogInscriptionComponent {
 
+  errorMessage: string = "";
   selectedSessionID!: number;
   public participantForm = new FormGroup({
     participantNom: new FormControl('', [Validators.required]),
@@ -34,9 +35,9 @@ public onSubmit(e: any) {
 
     this.apiService.inscriptionParticipant(leParticipant).subscribe(res => {
       if(res == "Already registered"){
-        //L'utilisateur ne peut s'inscrire deux fois à la même session.
+        this.errorMessage = "Impossible de s'inscrire plusieurs fois à la même session";
       }else if(res == false){
-        //Erreur lors de l'insertion du participant à la session.
+        this.errorMessage = "Erreur";
       }else{
         //Ok
       }

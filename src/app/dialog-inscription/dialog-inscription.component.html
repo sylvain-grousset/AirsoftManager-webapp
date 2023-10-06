@@ -7,9 +7,10 @@
       <input type="text" id="prenom"
       formControlName="participantPrenom" placeholder="Prenom" />
       <br>
-      <input type="text" id="email" 
+      <input type="text" id="email" [class]=""
       formControlName="participantEmail" placeholder="Email" />
       <br>
+      <div class="">{{ errorMessage }}</div>
       <button id="submit" type="submit">Valider</button>
       <button mat-dialog-close>Close</button>
     </form>
