@@ -8,11 +8,13 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { DialogInscriptionComponent } from './dialog-inscription/dialog-inscription.component'; 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DialogInscriptionComponent
+    DialogInscriptionComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
