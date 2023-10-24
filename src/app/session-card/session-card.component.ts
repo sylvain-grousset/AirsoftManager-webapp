@@ -4,13 +4,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogInscriptionComponent } from '../dialog-inscription/dialog-inscription.component';
 
 @Component({
-  selector: 'app-session-card',
+  selector: '[app-session-card]',
   templateUrl: './session-card.component.html',
   styleUrls: ['./session-card.component.scss']
 })
 
 export class SessionCardComponent {
-  @Input() lesSessions: SessionNbrParticipant[] = [];
+  @Input() uneSession!: SessionNbrParticipant;
 
   constructor(private dialog: MatDialog){}
 

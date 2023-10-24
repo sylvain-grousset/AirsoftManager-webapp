@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 
-
-<app-session-card [lesSessions]="lesSessions"></app-session-card>
+<div class="cardList">
+  <div app-session-card *ngFor="let uneSession of lesSessions" [uneSession]="uneSession"></div>
+</div>
 
 

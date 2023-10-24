@@ -1,15 +1,8 @@
   .border-error {
     border-color: red !important;
   }
-
-  .cardList{
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    justify-content: center;
-  }
   
-  .session-card {
+  :host {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
