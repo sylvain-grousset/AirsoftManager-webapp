@@ -1,15 +1,18 @@
-<div class="cardList">
-<div class="card" *ngFor="let uneSession of lesSessions">
-  <header>
-  Le {{ uneSession.session.sessionDate | date:'dd/MM/yyyy' }}
-  </header>
-  <br>
-  {{ uneSession.session.heureDebut }} - {{ uneSession.session.heureFin }}
-  <br>
-  {{ uneSession.numberOfParticipants }} / {{ uneSession.session.maxParticipants }}
-  <br>
-  <button mat-button (click)="openDialog(uneSession.session.sessionId)">S'inscrire</button>
-  <br>
+<app-navbar></app-navbar>
 
+<div class="cardList">
+  <div class="session-card" *ngFor="let uneSession of lesSessions">
+    <div class="session-header">
+      <h3>Nom de la session</h3>
+      <p>Date: {{ uneSession.session.sessionDate | date:'dd/MM/yyyy' }}</p>
+      <p>Plage horaire: {{ uneSession.session.heureDebut }} - {{ uneSession.session.heureFin }}</p>
+    </div>
+    <div class="session-details">
+      <p>Participants inscrits: {{ uneSession.numberOfParticipants }} / {{ uneSession.session.maxParticipants }}</p>
+    </div>
+    <div class="session-button">
+      <button mat-button (click)="openDialog(uneSession.session.sessionId)">Inscription</button>
+    </div>
+  </div>
 </div>
-</div>
+

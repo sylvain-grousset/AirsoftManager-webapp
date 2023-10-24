@@ -5,13 +5,55 @@
     justify-content: center;
 }
 
-.card{
-    width: 200px;
-    border-style:solid;
-    border-radius: 10px;
-}
-
 .border-error {
     border-color: red !important;
   }
 
+
+  .session-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    background-color: #fff;
+  }
+  
+  .session-header {
+    text-align: center;
+  }
+  
+  .session-header h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .session-details {
+    margin-top: 10px;
+  }
+  
+  .session-details p {
+    margin: 5px 0; 
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .session-button {
+    text-align: center;
+  }
+  
+  .session-button button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .session-button button:hover {
+    background-color: #0056b3;
+  }
