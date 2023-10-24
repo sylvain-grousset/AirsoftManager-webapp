@@ -9,12 +9,14 @@ import { DialogInscriptionComponent } from './dialog-inscription/dialog-inscript
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SessionCardComponent } from './session-card/session-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogInscriptionComponent,
-    NavbarComponent
+    NavbarComponent,
+    SessionCardComponent
   ],
   imports: [
     BrowserModule,

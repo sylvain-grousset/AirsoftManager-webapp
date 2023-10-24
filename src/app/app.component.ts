@@ -13,7 +13,7 @@ import { SessionNbrParticipant } from './interface/SessionNbrParticipant';
 export class AppComponent implements OnInit{
   title = 'AirsoftManager-webapp';
 
-  constructor(private apiService: ApiService, public dialog: MatDialog){}
+  constructor(private apiService: ApiService){}
 
   lesSessions: SessionNbrParticipant[] = [];
 
@@ -22,15 +22,6 @@ export class AppComponent implements OnInit{
         this.lesSessions = res;
         console.log(res);
       })
-  }
-
-  openDialog(sessionID: number){
-
-    this.dialog.open(DialogInscriptionComponent, {
-      data: { sessionID },
-      disableClose: true
-      
-    });
   }
 
 }
