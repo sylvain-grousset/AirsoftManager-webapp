@@ -1,7 +1,6 @@
 <div class="session-header">
-    <h3>Nom de la session</h3>
-    <p>Date: {{ uneSession.session.sessionDate | date:'dd/MM/yyyy' }}</p>
-    <p>Plage horaire: {{ uneSession.session.heureDebut }} - {{ uneSession.session.heureFin }}</p>
+    <h3>Airsoft {{ formatDate(uneSession.session.sessionDate) }}</h3>
+    <p>{{ uneSession.session.heureDebut }} - {{ uneSession.session.heureFin }}</p>
 </div>
 <div class="session-details">
     <p>Participants inscrits: {{ uneSession.numberOfParticipants }} / {{ uneSession.session.maxParticipants }}</p>

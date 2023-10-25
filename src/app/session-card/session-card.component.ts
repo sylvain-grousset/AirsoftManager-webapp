@@ -23,4 +23,15 @@ export class SessionCardComponent {
     });
   }
 
+  formatDate(date: Date): string {
+    date = new Date(date);
+    const options: Intl.DateTimeFormatOptions = {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      weekday: 'long',
+    };
+    return date.toLocaleDateString('fr-FR', options);
+  }
+
 }
