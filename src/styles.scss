@@ -2,3 +2,17 @@
 
 html, body { height: 100%; }
 body { margin: 0; margin-top: 125px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+//Disable controls and footer to leave a clean map.
+a[href^="http://maps.google.com/maps"],
+a[href^="https://maps.google.com/maps"],
+a[href^="https://www.google.com/maps"] {
+    display: none !important;
+}
+.gm-bundled-control .gmnoprint {
+    display: block;
+}
+.gmnoprint:not(.gm-bundled-control) {
+    display: none;
+}
