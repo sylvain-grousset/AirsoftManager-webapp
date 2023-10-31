@@ -10,13 +10,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SessionCardComponent } from './session-card/session-card.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogInscriptionComponent,
     NavbarComponent,
-    SessionCardComponent
+    SessionCardComponent,
+    InscriptionComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,
