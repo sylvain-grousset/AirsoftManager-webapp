@@ -1,0 +1,17 @@
+.input{
+    --input-focus: 245 100% 42%;
+    transition: 180ms box-shadow ease-in-out;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0 1em;
+    background-color: #fff;
+    border: 2px solid silver;
+    width: clamp(150px, 50%, 300px);
+    height: 2.25rem;
+    border-radius: 30px;
+    line-height: 1;
+}
+
+label{
+    margin-right: 10px;
+}
