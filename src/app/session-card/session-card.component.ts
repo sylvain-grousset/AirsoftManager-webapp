@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { SessionNbrParticipant } from '../interface/SessionNbrParticipant';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogInscriptionComponent } from '../dialog-inscription/dialog-inscription.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: '[app-session-card]',
@@ -12,15 +11,10 @@ import { DialogInscriptionComponent } from '../dialog-inscription/dialog-inscrip
 export class SessionCardComponent {
   @Input() uneSession!: SessionNbrParticipant;
 
-  constructor(private dialog: MatDialog){}
+  constructor(private router: Router){}
 
-  openDialog(sessionID: number){
-
-    this.dialog.open(DialogInscriptionComponent, {
-      data: { sessionID },
-      disableClose: true
-      
-    });
+  gotoInscription(sessionID: number){
+    this.router.navigateByUrl('inscription/'+sessionID)
   }
 
   formatDate(date: Date): string {

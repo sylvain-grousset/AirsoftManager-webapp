@@ -6,6 +6,6 @@
     <p>Participants inscrits: {{ uneSession.numberOfParticipants }} / {{ uneSession.session.maxParticipants }}</p>
 </div>
 <div class="session-button">
-    <button mat-button (click)="openDialog(uneSession.session.sessionId)">Inscription</button>
+    <button mat-button (click)="gotoInscription(uneSession.session.sessionId)">Inscription</button>
 </div>
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { InscriptionParticipant } from '../interface/InscriptionParticipant';
 import { ApiService } from '../service/api-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-inscription',
@@ -10,21 +11,26 @@ import { ApiService } from '../service/api-service.service';
 })
 export class InscriptionComponent {
   errorMessage: string = "";
-
+  sessionID!: number;
   public participantForm = new FormGroup({
     participantNom: new FormControl('', [Validators.required]),
     participantPrenom: new FormControl('', [Validators.required]),
     participantEmail: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
   });
 
-  constructor(private apiService: ApiService){
+  constructor(private apiService: ApiService, private route: ActivatedRoute){
     
+  }
+
+  ngOnInit(){
+    this.route.params.subscribe(params => {this.sessionID = params['idSession']
+  console.log(this.sessionID)});
   }
 
   public onSubmit(e: any) {
     if(!this.participantForm.invalid){
       let leParticipant: InscriptionParticipant = {
-        sessionID: 1,
+        sessionID: this.sessionID,
         nom: this.participantForm.controls.participantNom.value!,
         prenom: this.participantForm.controls.participantPrenom.value!,
         email: this.participantForm.controls.participantEmail.value!
@@ -36,7 +42,7 @@ export class InscriptionComponent {
         }else if(res == false){
           this.errorMessage = "Erreur";
         }else{
-          //Ok
+          this.errorMessage = "OK";
         }
       });
   
