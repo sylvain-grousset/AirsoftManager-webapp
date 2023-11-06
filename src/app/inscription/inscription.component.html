@@ -1,26 +1,25 @@
 <app-navbar></app-navbar>
 
 <form [formGroup]="participantForm" id="participantForm" (ngSubmit)="onSubmit($event)">
+  
+  <table>
+      <tr>
+        <td class="tdName"><label for="nom">Votre nom :</label></td>
+        <td><input type="text" id="nom" formControlName="participantNom" class="input" /></td>
+      </tr>
+      <tr>
+        <td class="tdName"><label for="prenom">Votre prenom :</label></td>
+        <td><input type="text" id="prenom" formControlName="participantPrenom" class="input" /></td>
 
-    <label for="nom">Votre nom :</label>
-    <input type="text" id="nom" 
-    formControlName="participantNom" class="input" />
-    
-    <br>
+      <tr>
+        <td class="tdName"><label for="nom">Votre email :</label></td>
+        <td><input type="text" id="email" class="input" formControlName="participantEmail" class="input" /></td>
+      </tr>
+  </table>
 
-    <label for="prenom">Votre prenom :</label>
-    <input type="text" id="prenom"
-    formControlName="participantPrenom" class="input" />
+  <br>
 
-    <br>
+  <div class="">{{ errorMessage }}</div>
+  <button id="submit" type="submit">Valider</button>
 
-    <label for="nom">Votre email :</label>
-    <input type="text" id="email" class="input"
-    formControlName="participantEmail" class="input" />
-
-    <br>
-
-    <div class="">{{ errorMessage }}</div>
-    <button id="submit" type="submit">Valider</button>
-
-  </form>
+</form>
