@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { InscriptionParticipant } from '../interface/InscriptionParticipant';
 import { ApiService } from '../service/api-service.service';
 import { ActivatedRoute } from '@angular/router';
+import { UtilsService } from '../service/utils.service';
 
 @Component({
   selector: 'app-inscription',
@@ -10,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./inscription.component.scss']
 })
 export class InscriptionComponent {
-  errorMessage: string = "";
+  public triedToSubmit = false;
   sessionID!: number;
   public participantForm = new FormGroup({
     participantNom: new FormControl('', [Validators.required]),
@@ -18,7 +19,7 @@ export class InscriptionComponent {
     participantEmail: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
   });
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute){
+  constructor(private apiService: ApiService, private route: ActivatedRoute, public utilsService: UtilsService){
     
   }
 
@@ -28,6 +29,8 @@ export class InscriptionComponent {
   }
 
   public onSubmit(e: any) {
+    this.triedToSubmit = true;
+    this.utilsService.checkFormsInvalid(this.participantForm);
     if(!this.participantForm.invalid){
       let leParticipant: InscriptionParticipant = {
         sessionID: this.sessionID,
@@ -38,11 +41,11 @@ export class InscriptionComponent {
   
       this.apiService.inscriptionParticipant(leParticipant).subscribe(res => {
         if(res == "Already registered"){
-          this.errorMessage = "Impossible de s'inscrire plusieurs fois à la même session";
+          //this.errorMessage = "Impossible de s'inscrire plusieurs fois à la même session";
         }else if(res == false){
-          this.errorMessage = "Erreur";
+         // this.errorMessage = "Erreur";
         }else{
-          this.errorMessage = "OK";
+         // this.errorMessage = "OK";
         }
       });
   
