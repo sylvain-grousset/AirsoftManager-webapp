@@ -26,8 +26,7 @@ export class InscriptionComponent {
   }
 
   ngOnInit(){
-    this.route.params.subscribe(params => {this.sessionID = params['idSession']
-  console.log(this.sessionID)});
+    this.route.params.subscribe(params => {this.sessionID = params['idSession']});
   }
 
   public onSubmit(e: any) {
@@ -43,11 +42,12 @@ export class InscriptionComponent {
   
       this.apiService.inscriptionParticipant(leParticipant).subscribe(res => {
         if(res == "Already registered"){
-          //this.errorMessage = "Impossible de s'inscrire plusieurs fois à la même session";
+          console.log('Impossible de s\'inscrire plusieurs fois à la même session.');
         }else if(res == false){
-         // this.errorMessage = "Erreur";
+         console.log('Backend erreur');
         }else{
-         this.imageSource = res.toString();
+          this.triedToSubmit = false;
+          this.imageSource = res.toString();
         }
       });
   

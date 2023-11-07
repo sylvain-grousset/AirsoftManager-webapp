@@ -22,5 +22,28 @@
 
 </form>
 
-
-<img width="100px" height="100px" [src]="this.imageSource" />
+<div class="QRContainer">
+  <div class="QRCode">
+    <img  [src]="this.imageSource" />
+  </div>
+  <div class="explanation">
+    <p>Votre QR Code de réservation a été généré avec succès. 
+      <br><br>
+      Ce QR Code est essentiel pour votre participation à la session d'airsoft que vous avez choisie.
+      <br>
+      Le QR Code que vous voyez est la preuve de votre inscription à la session d'airsoft que vous avez sélectionnée. Le personnel sur place utilisera ce QR Code pour confirmer votre participation.
+      <br>
+      Le jour de la session, veuillez vous présenter au lieu de l'événement muni de votre QR Code. Assurez-vous qu'il est clairement visible et en bon état. Vous pouvez l'afficher sur votre appareil mobile ou l'imprimer, selon votre préférence.
+      À votre arrivée, le personnel sur place scannera votre QR Code. Cela permettra de confirmer votre présence à la session. Assurez-vous que votre QR Code est facilement accessible pour un processus fluide.
+      <br><br>
+      Nous vous remercions pour votre réservation et nous sommes impatients de vous accueillir à notre session d'airsoft. Profitez de l'événement et amusez-vous en toute sécurité !</p>
+    <div class="QRExportContainer">
+      <button id="SaveOnComputer">Enregistrer sous</button>
+      <button id="SendThroughtSMS">Envoyer par SMS</button>
+      <button id="SendThroughtMail">Envoyer par mail</button>
+      <button id="Print">Imprimer</button>
+    </div>
+    
+  </div>
+  
+</div>
