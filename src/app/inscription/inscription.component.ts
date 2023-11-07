@@ -4,6 +4,7 @@ import { InscriptionParticipant } from '../interface/InscriptionParticipant';
 import { ApiService } from '../service/api-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { UtilsService } from '../service/utils.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-inscription',
@@ -13,13 +14,14 @@ import { UtilsService } from '../service/utils.service';
 export class InscriptionComponent {
   public triedToSubmit = false;
   sessionID!: number;
+  public imageSource!: string;
   public participantForm = new FormGroup({
     participantNom: new FormControl('', [Validators.required]),
     participantPrenom: new FormControl('', [Validators.required]),
     participantEmail: new FormControl('', [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
   });
 
-  constructor(private apiService: ApiService, private route: ActivatedRoute, public utilsService: UtilsService){
+  constructor(private apiService: ApiService, private route: ActivatedRoute, private sanitizer: DomSanitizer, public utilsService: UtilsService){
     
   }
 
@@ -45,7 +47,7 @@ export class InscriptionComponent {
         }else if(res == false){
          // this.errorMessage = "Erreur";
         }else{
-         // this.errorMessage = "OK";
+         this.imageSource = res.toString();
         }
       });
   
