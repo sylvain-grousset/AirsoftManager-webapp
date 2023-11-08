@@ -28,12 +28,11 @@
     <img *ngIf="!this.waitingForQR" [src]="this.imageSource" />
     <div *ngIf="this.waitingForQR" class="spinnerContainer">
       <mat-progress-spinner diameter="70" mode="indeterminate"></mat-progress-spinner>
-      <p>Attente de la soumission du formulaire ci dessus ...</p>
+      <p>Attente de la soumission du formulaire ...</p>
   </div>
   </div>
   <div class="explanation">
-    <p>Votre QR Code de réservation a été généré avec succès. 
-      <br><br>
+    <p>
       Ce QR Code est essentiel pour votre participation à la session d'airsoft que vous avez choisie.
       <br>
       Le QR Code que vous voyez est la preuve de votre inscription à la session d'airsoft que vous avez sélectionnée. Le personnel sur place utilisera ce QR Code pour confirmer votre participation.
