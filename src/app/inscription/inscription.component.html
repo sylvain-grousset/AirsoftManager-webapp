@@ -24,7 +24,11 @@
 
 <div class="QRContainer">
   <div class="QRCode">
-    <img  [src]="this.imageSource" />
+    <img *ngIf="!this.waitingForQR" [src]="this.imageSource" />
+    <div *ngIf="this.waitingForQR" class="spinnerContainer">
+      <mat-progress-spinner diameter="70" mode="indeterminate"></mat-progress-spinner>
+      <p>Attente de la soumission du formulaire ci dessus ...</p>
+  </div>
   </div>
   <div class="explanation">
     <p>Votre QR Code de réservation a été généré avec succès. 
@@ -38,10 +42,10 @@
       <br><br>
       Nous vous remercions pour votre réservation et nous sommes impatients de vous accueillir à notre session d'airsoft. Profitez de l'événement et amusez-vous en toute sécurité !</p>
     <div class="QRExportContainer">
-      <button id="SaveOnComputer">Enregistrer sous</button>
-      <button id="SendThroughtSMS">Envoyer par SMS</button>
-      <button id="SendThroughtMail">Envoyer par mail</button>
-      <button id="Print">Imprimer</button>
+      <button [disabled]="this.waitingForQR" id="Download">Télécharger</button>
+      <button [disabled]="this.waitingForQR" id="SendThroughtSMS">Envoyer par SMS</button>
+      <button [disabled]="this.waitingForQR" id="SendThroughtMail">Envoyer par mail</button>
+      <button [disabled]="this.waitingForQR" id="Print">Imprimer</button>
     </div>
     
   </div>

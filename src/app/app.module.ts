@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SessionCardComponent } from './session-card/session-card.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { MainComponent } from './main/main.component';
+import {ProgressSpinnerMode, MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MainComponent } from './main/main.component';
     MatDialogModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

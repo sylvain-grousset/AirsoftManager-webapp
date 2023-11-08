@@ -95,6 +95,9 @@ form{
 
     .explanation{
         width: 60%;
+        margin: 60px;
+        margin-top: 20px;
+        text-align: justify;
     }
 
     .QRExportContainer{
@@ -119,6 +122,19 @@ form{
             background-color: #1987f8;
             color: white;
         }
+
+        button:disabled {
+            background-color: #f4f4f6; /* Choisissez une couleur appropriée pour les boutons désactivés */
+            color: #8e8e8f;
+            cursor: not-allowed; /* Curseur "non autorisé" pour indiquer qu'il est désactivé */
+        }
         
     }
+}
+
+.spinnerContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }

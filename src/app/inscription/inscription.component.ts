@@ -15,6 +15,8 @@ export class InscriptionComponent {
   public triedToSubmit = false;
   sessionID!: number;
   public imageSource!: string;
+  public waitingForQR = true;
+
   public participantForm = new FormGroup({
     participantNom: new FormControl('', [Validators.required]),
     participantPrenom: new FormControl('', [Validators.required]),
@@ -27,10 +29,12 @@ export class InscriptionComponent {
 
   ngOnInit(){
     this.route.params.subscribe(params => {this.sessionID = params['idSession']});
+    this.waitingForQR = true;
   }
 
   public onSubmit(e: any) {
-    this.triedToSubmit = true;
+    if(this.participantForm.invalid) this.triedToSubmit = true;
+    
     this.utilsService.checkFormsInvalid(this.participantForm);
     if(!this.participantForm.invalid){
       let leParticipant: InscriptionParticipant = {
@@ -47,6 +51,7 @@ export class InscriptionComponent {
          console.log('Backend erreur');
         }else{
           this.triedToSubmit = false;
+          this.waitingForQR = false;
           this.imageSource = res.toString();
         }
       });

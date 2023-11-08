@@ -16,3 +16,8 @@ a[href^="https://www.google.com/maps"] {
 .gmnoprint:not(.gm-bundled-control) {
     display: none;
 }
+
+//Changement couleur du spinner. Fonctionne uniquement au niveau global, ne fonctionne pas au niveau du css des ocmposants. 
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: #c70102!important;
+}
