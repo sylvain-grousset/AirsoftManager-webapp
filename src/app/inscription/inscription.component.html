@@ -40,7 +40,7 @@
       <br><br>
       Nous vous remercions pour votre réservation et nous sommes impatients de vous accueillir à notre session d'airsoft. Profitez de l'événement et amusez-vous en toute sécurité !</p>
     <div class="QRExportContainer">
-      <button [disabled]="this.waitingForQR" id="Download">Télécharger</button>
+      <button [disabled]="this.waitingForQR" (click)="downloadImage()" id="Download">Télécharger</button>
       <button [disabled]="this.waitingForQR" id="SendThroughtSMS">Envoyer par SMS</button>
       <button [disabled]="this.waitingForQR" id="SendThroughtMail">Envoyer par mail</button>
       <button [disabled]="this.waitingForQR" id="Print">Imprimer</button>
