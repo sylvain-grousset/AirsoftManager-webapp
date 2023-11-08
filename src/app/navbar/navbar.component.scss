@@ -13,6 +13,7 @@ header {
     display: flex;
     align-items: center;
     box-shadow: 0 0 25px 0 black;
+    z-index: 1;
 }
 
 header * {
