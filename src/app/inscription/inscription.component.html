@@ -1,26 +1,27 @@
 <app-navbar></app-navbar>
 
-<form [formGroup]="participantForm" id="participantForm" (ngSubmit)="onSubmit($event)">
-  <label class="headerCard">Vos informations</label>
-  <table>
-      <tr>
-        <td class="tdName"><label for="nom">Votre nom :</label></td>
-        <td><input type="text" id="nom" formControlName="participantNom" [class]="(utilsService.isInvalid(participantForm.controls.participantNom) ? 'border-error ' : '') + 'input'" /></td>
-      </tr>
-      <tr>
-        <td class="tdName"><label for="prenom">Votre prenom :</label></td>
-        <td><input type="text" id="prenom" formControlName="participantPrenom" [class]="(utilsService.isInvalid(participantForm.controls.participantPrenom) ? 'border-error ' : '') + 'input'" /></td>
+<div class="formContainer">
+  <form [formGroup]="participantForm" id="participantForm" (ngSubmit)="onSubmit($event)">
+    <label class="headerCard">Vos informations</label>
+    <table>
+        <tr>
+          <td class="tdName"><label for="nom">Votre nom :</label></td>
+          <td><input type="text" id="nom" formControlName="participantNom" [class]="(utilsService.isInvalid(participantForm.controls.participantNom) ? 'border-error ' : '') + 'input'" /></td>
+        </tr>
+        <tr>
+          <td class="tdName"><label for="prenom">Votre prenom :</label></td>
+          <td><input type="text" id="prenom" formControlName="participantPrenom" [class]="(utilsService.isInvalid(participantForm.controls.participantPrenom) ? 'border-error ' : '') + 'input'" /></td>
 
-      <tr>
-        <td class="tdName"><label for="nom">Votre email :</label></td>
-        <td><input type="text" id="email" class="input" formControlName="participantEmail" [class]="(utilsService.isInvalid(participantForm.controls.participantEmail) ? 'border-error ' : '') + 'input'" /></td>
-      </tr>
-  </table>
-  <div *ngIf="this.triedToSubmit" class="alert-warning">Veuillez renseigner les champs manquants</div>
+        <tr>
+          <td class="tdName"><label for="nom">Votre email :</label></td>
+          <td><input type="text" id="email" class="input" formControlName="participantEmail" [class]="(utilsService.isInvalid(participantForm.controls.participantEmail) ? 'border-error ' : '') + 'input'" /></td>
+        </tr>
+    </table>
+    <div *ngIf="this.triedToSubmit" class="alert-warning">Veuillez renseigner les champs manquants</div>
 
-  <button id="submit" type="submit">Valider</button>
-
-</form>
+    <button id="submit" type="submit">Valider</button>
+  </form>
+</div> 
 
 <div class="QRContainer">
   <div class="QRCode">
