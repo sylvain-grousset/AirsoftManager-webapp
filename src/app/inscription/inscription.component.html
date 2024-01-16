@@ -43,7 +43,7 @@
       <button [disabled]="this.waitingForQR" (click)="downloadImage()" id="Download">Télécharger</button>
       <button [disabled]="this.waitingForQR" id="SendThroughtSMS">Envoyer par SMS</button>
       <button [disabled]="this.waitingForQR" id="SendThroughtMail">Envoyer par mail</button>
-      <button [disabled]="this.waitingForQR" id="Print">Imprimer</button>
+      <button [disabled]="this.waitingForQR" (click)="print()" id="Print">Imprimer</button>
     </div>
     
   </div>
