@@ -59,27 +59,6 @@ export class InscriptionComponent {
     }
   }
 
-  print(){
-    var win = window.open('' );
-    var img=win!.document.createElement("img");
-    img.src=this.imageSource;
-    win!.document.body.appendChild(img);
-    img.onload = function(){ 
-        win!.print();
-    };   
-  }
-
-  downloadImage() {
-    let downloadedImage = this.imageSource.substring(this.imageSource.indexOf(',')+1);    
-    const blob = this.base64ToBlob(downloadedImage);
-    const blobUrl = URL.createObjectURL(blob);
-
-    const a = document.createElement('a');
-    a.href = blobUrl;
-    a.download = 'QRCode.png';
-    a.click();
-  }
-
   private base64ToBlob(base64: string): Blob {
     const byteCharacters = atob(base64);
     const byteNumbers = new Array(byteCharacters.length);
